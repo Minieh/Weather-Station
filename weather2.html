@@ -1,0 +1,193 @@
+<style>
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather Station Website Thing</title>
+<meta charset="UTF-8"><!-- http-equiv="refresh" content="10"-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+<script type="text/javascript">
+var auto_refresh = setInterval(
+function () {
+    $('#pricing').load('#pricing');
+}, 5000);
+</script>
+-->
+<style>
+
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+</style>
+</head>
+<!-- Image Header -->
+<header class="main-header">
+<div class="header">
+    <div class="centered">
+</div>
+  <img src="http://thoughtware.com/wp-content/uploads/2013/05/sky.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Our Weather Station</button>
+       <div class="centered"></div>
+  </div>
+ </div>
+
+</header>   
+        
+        
+        
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>Our Group Team Members</h2>
+
+
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="https://png.pngtree.com/svg/20160307/52c66f1f8b.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Valentas Vaitkus</h3>
+  <p>Programming/Website</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://png.pngtree.com/svg/20160307/52c66f1f8b.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Oisin Miller</h3>
+  <p>Group Report</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://png.pngtree.com/svg/20160307/52c66f1f8b.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Cian Fahy</h3>
+  <p>Programming</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://png.pngtree.com/svg/20160307/52c66f1f8b.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Lee Brennan</h3>
+  <p>Group Report / Research</p>
+</div>
+
+</div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<div class="w3-quarter">
+<h2>What is this</h2>
+<p>We were given a task to create a weather station using a Raspberry PI 3 and a Sense Hat module attachment for the Raspberry Pi. This is our second year assignment for our Systems Administration and RPI module.</p>
+</div>
+
+
+
+</div>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Weather data part-->
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2>Weather Reports</h2>
+    <p>Weather data straight from the Raspberry PI</p><br>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Raw Data from Sensors</p>
+        </li>
+        
+          <h2 class="w3-wide" ><strong>Celcius:</strong> {{ celcius }}</h2>
+	  <h2 class="w3-wide" ><strong>Fahrenheit:</strong> {{ fahrenheit }}</h2>
+          <h2 class="w3-wide" ><strong>Humidity</strong> {{ humidity }}</h2>
+          <h2 class="w3-wide" ><strong>Pressure</strong> {{ pressure }}</h2>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme-l2">
+          <p class="w3-xlarge">Wia Weather</p>
+        </li>
+        
+          <h2 class="w3-wide"><iframe width="400" height="280" allowtransparency="true" scrolling="no" frameborder="no" src="https://widgets.wia.io/embed/wgt_yE5mwFDJ/dev_6k0tOvlP"></iframe><iframe width="400" height="280" allowtransparency="true" scrolling="no" frameborder="no" src="https://widgets.wia.io/embed/wgt_Djyj3uPf/dev_6k0tOvlP"></iframe>  </h2>
+   
+        
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Graph Data</p>
+        </li>
+      
+          <h2 class="w3-wide"><iframe width="400" height="280" allowtransparency="true" scrolling="no" frameborder="no" src="https://widgets.wia.io/embed/wgt_15HTDUkP/dev_6k0tOvlP"></iframe></h2>
+  
+            
+      </ul>
+    </div>
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p>Swing by for a cup of coffee, or whatever.</p>
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  IT Sligo</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +911</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  test@test.com</p>
+    </div>
+    <div class="w3-col m7">
+ 
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us (Don't Bother Pressing these they do nothing)</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by a lot of Redbull's</p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
+
